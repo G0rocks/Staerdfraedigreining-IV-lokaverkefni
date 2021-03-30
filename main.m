@@ -9,7 +9,7 @@ for x = 0:1
 end
 
 
-helmholtzeq(L1, L2, h, lambda)git push
+helmholtzeq(L1, L2, h, lambda)
 
 % lidur 2
 
