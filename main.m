@@ -1,3 +1,5 @@
+% Fyrri hluti - Helmholtz
+
 % lidur 1
 
 
@@ -7,3 +9,11 @@
 
 
 % lidur 3
+
+
+
+
+
+
+% Seinni hluti - Varmajafnvaegi
+
