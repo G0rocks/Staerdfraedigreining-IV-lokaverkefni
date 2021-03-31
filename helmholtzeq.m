@@ -12,7 +12,7 @@ function HZ = helmholtzeq(L1, L2, h, lambda)
     y = (i-1).*h
     for j = 1:(N+1) % Columns
       x = (j-1).*h
-      HZ(i,j) = thrihyrningsnalgun(x,y)
+      HZ(i,j) = helmholtzNalgun(x,y)
     end    % Column for loop
   end  % Row for loop
 end % Function
