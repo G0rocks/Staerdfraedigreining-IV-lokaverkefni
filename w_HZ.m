@@ -1,0 +1,1 @@
+% w functionfunction w = w_HZ(x)  if (x >= 0 && x <= 1)    w = 1;    return;  end % if    v = NaN;  disp(strcat("w_HZ Error: Can not compute w with x = ", num2str(x)));end % Function
