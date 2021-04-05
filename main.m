@@ -3,6 +3,9 @@
 % lidur 2 - Prófunarkeyrsla
 lambda = 1/100; L1 = 1; L2 = 1; h = 1/4; w = 1; v = 0;
 
+disp("HZ")
+disp(HZ)
+pit 
 % Handles fyrir v og w föll
 v_handle = @v_HZ;
 w_handle = @w_HZ;
