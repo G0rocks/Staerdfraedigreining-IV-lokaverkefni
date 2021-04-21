@@ -39,6 +39,7 @@ u_fylki = u_HZ(X,Y, lambda, L1, L2);
 figurecounter = figurecounter+1;
 figure(figurecounter);
 surf(X,Y,u_fylki, 'FaceAlpha',0.7);
+title(strcat('Bein lausn, Lambda = ',num2str(lambda)));
 
 lambda = 10;
 u_fylki = u_HZ(X,Y, lambda, L1, L2);
@@ -46,7 +47,7 @@ u_fylki = u_HZ(X,Y, lambda, L1, L2);
 figurecounter = figurecounter+1;
 figure(figurecounter);
 surf(X,Y,u_fylki, 'FaceAlpha',0.7);
-
+title(strcat('Bein lausn, Lambda = ',num2str(lambda)));
 % Liður 4 - Teikna graf lausnar
 L1 = 1;
 L2 = 1;
@@ -65,35 +66,35 @@ HZ = helmholtzeq(L1, L2, h, lambda, v_handle, w_handle, u0, u1);
 figurecounter = figurecounter+1;
 figure(figurecounter);
 surf(X,Y,HZ, 'FaceAlpha',0.7);
-title(strcat('Lamda = ',num2str(lambda)));
+title(strcat('Lambda = ',num2str(lambda)));
 
 lambda = 1/10;
 HZ = helmholtzeq(L1, L2, h, lambda, v_handle, w_handle, u0, u1);
 figurecounter = figurecounter+1;
 figure(figurecounter);
 surf(X,Y,HZ, 'FaceAlpha',0.7);
-title(strcat('Lamda = ',num2str(lambda)));
+title(strcat('Lambda = ',num2str(lambda)));
 
 lambda = 1;
 HZ = helmholtzeq(L1, L2, h, lambda, v_handle, w_handle, u0, u1);
 figurecounter = figurecounter+1;
 figure(figurecounter);
 surf(X,Y,HZ, 'FaceAlpha',0.7);
-title(strcat('Lamda = ',num2str(lambda)));
+title(strcat('Lambda = ',num2str(lambda)));
 
 lambda = 10;
 HZ = helmholtzeq(L1, L2, h, lambda, v_handle, w_handle, u0, u1);
 figurecounter = figurecounter+1;
 figure(figurecounter);
 surf(X,Y,HZ, 'FaceAlpha',0.7);
-title(strcat('Lamda = ',num2str(lambda)));
+title(strcat('Lambda = ',num2str(lambda)));
 
 lambda = 30;
 HZ = helmholtzeq(L1, L2, h, lambda, v_handle, w_handle, u0, u1);
 figurecounter = figurecounter+1;
 figure(figurecounter);
 surf(X,Y,HZ, 'FaceAlpha',0.7);
-title(strcat('Lamda = ',num2str(lambda)));
+title(strcat('Lambda = ',num2str(lambda)));
 
 % Seinni hluti - Varmajafnvaegi
 
@@ -103,7 +104,7 @@ psi1_handle = @(a,beta1,x) psi1(a,beta1,x);
 psi2_handle = @(a,beta2,x) psi2(a,beta2,x);
 
 varmajafnvaegi(1,1,1,0,0.25, psi1_handle,psi2_handle,figurecounter)
-
+title('Prufukeyrsla');
 
 figurecounter=figurecounter+1;
 %liður3
@@ -111,6 +112,7 @@ psi1_handle = @(a,beta1,x) psi1(a,beta1,x);
 psi2_handle = @(a,beta2,x) psi2(a,beta2,x);
 
 varmajafnvaegi(2,1,1,2,0.02, psi1_handle,psi2_handle,figurecounter)
+title('Liður 3');
 
 figurecounter=figurecounter+1;
 %liður 4
@@ -118,3 +120,4 @@ psi1_handle = @(a,beta1,x) psi1_okkar(a,beta1,x);
 psi2_handle = @(a,beta2,x) psi2_okkar(a,beta2,x);
 
 varmajafnvaegi(2,1,1,2,0.02, psi1_handle,psi2_handle,figurecounter)
+title('Liður 4');
