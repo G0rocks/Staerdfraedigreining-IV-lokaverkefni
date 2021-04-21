@@ -5,7 +5,7 @@
 % m er fjöldi raða
 % h er skrefastærð
 
-function [A,b] = generate_A_and_b(x0, lambda, n, m, h)
+function [A,b] = generate_A_and_b(x0, lambda, n, m, h, v, w, u0, u1, L1)
     P = n*m;
     A = zeros(P);
     b = zeros(1, P);
@@ -17,13 +17,13 @@ function [A,b] = generate_A_and_b(x0, lambda, n, m, h)
           % Ef botnpunktur
             if (j == 1)
                 A(numer,numer) = 1;
-                b(numer) = v_HZ(x0 + (i-1)*h);
+                b(numer) = v(x0 + (i-1)*h,u1,L1);
             end % if
 
             % Ef topppunktur
           if (j == m)
               A(numer,numer) = 1;
-              b(numer) = w_HZ(x0 + (i-1)*h);
+              b(numer) = w(x0 + (i-1)*h,u0,L1);
           end % if
 
           % Ef vinstri hlið

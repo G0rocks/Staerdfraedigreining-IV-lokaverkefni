@@ -1,6 +1,6 @@
 % Fall sem tekur inn L1, L2,h og lambda og skilar Helmholtz fylkinu HZ
 % 
-function HZ = helmholtzeq(L1, L2, h, lambda)
+function HZ = helmholtzeq(L1, L2, h, lambda, v, w, u0, u1)
   % Fjöldi bila (ATH ad fjoldi punkta = fjoldi bila + 1
   N = L1/h;
   M = L2/h;
@@ -9,8 +9,12 @@ function HZ = helmholtzeq(L1, L2, h, lambda)
   
   % Initialize HZ array with zeros
   HZ = zeros(M+1 , N+1);
+  
+  % Handles
+  v_handle = @(x, u1,L1) v(x, u1,L1);
+  w_handle = @(x, u0,L1) w(x, u0,L1);
 
-  [A,b] = generate_A_and_b(0, lambda, n, m, h);
+  [A,b] = generate_A_and_b(0, lambda, n, m, h, v_handle, w_handle, u0, u1, L1);
   %A_inv = inv(A);
   
   A_sparse = sparse(A);
