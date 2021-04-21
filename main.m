@@ -1,4 +1,5 @@
 % Fyrri hluti - Helmholtz
+% Er klárt
 
 % lidur 2 - Prófunarkeyrsla
 lambda = 1/100;
@@ -17,8 +18,19 @@ HZ_lausn = [1. 1. 1. 1. 1.; .75 .75 .75 .75 .75; .50 .50 .50 .50 .50; .25 .25 .2
 disp("HZ_lausn:");
 disp(HZ_lausn);
 
-% lidur 3 - Prófa forrit á móti beinni lausn
+disp('Ef þetta fylki er nógu nálægt því að vera núll fylkið er helmholtz að virka');
+disp(HZ_lausn-HZ);
 
+% lidur 3 - Prófa forrit á móti beinni lausn
+L1 = 1;
+L2 = 2;
+h = 1/20;
+lambda = 1;
+
+%u_HZ(x,y, lambda, L1, L2);
+
+
+lambda = 10;
 
 
 % Liður 4 - Teikna graf lausnar
@@ -27,10 +39,7 @@ disp(HZ_lausn);
 
 
 % Seinni hluti - Varmajafnvaegi
+psi1_handle = @(a,beta1,x) psi1(a,beta1,x);
+psi2_handle = @(a,beta2,x) psi2(a,beta2,x);
 
-%varmajafnvaegi(1,1,1,0,0.25)
-
-psi1_handle = @(a,beta1,x) psi1(a,beta1,x)
-psi2_handle = @(a,beta2,x) psi2(a,beta2,x)
-
-varmajafnvaegi(1,1,1,0,0.25, psi1_handle,psi2_handle)
+varmajafnvaegi(1,1,1,0,0.25, psi1_handle,psi2_handle);
