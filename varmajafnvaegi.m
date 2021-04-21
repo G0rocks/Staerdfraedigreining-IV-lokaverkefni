@@ -1,8 +1,8 @@
-function varmajafnvaegi(a,b,beta1,beta2,h,psi1_local,psi2_local)
+function varmajafnvaegi(a,b,beta1,beta2,h,psi1_local,psi2_local, figurecounter)
 A=zeros(((a/h)+1)*((b/h)+1),((a/h)+1)*((b/h)+1));
 b_fylki=zeros(((a/h)+1)*((b/h)+1));
-X= 0:h:a
-Y= 0:h:b
+X= 0:h:a;
+Y= 0:h:b;
 N=(a/h);
 M=(b/h);
 for j=2:N   %innri punktar
@@ -39,24 +39,22 @@ for j=N+1:N+1   %hægri
 end
 
 A;
-x=0
+x=0;
 for j=1:N+1   %uppi
     for k=1:1
         A(j+(N+1)*(k-1),j+(N+1)*(k-1))=1;
         b_fylki(j+(N+1)*(k-1))=psi1_local(a,beta1,x);
-        psi1_local(a,beta1,x)
     end
     x=x+h;
 end
 
 A;
-x=0
+x=0;
 for j=1:N+1 %niðri
 
     for k=M+1:M+1
         A(j+(N+1)*(k-1),j+(N+1)*(k-1))=1;
         b_fylki(j+(N+1)*(k-1))= psi2_local(a,beta2,x);
-        psi2_local(a,beta2,x)
     end
     x=x+h;
 end
@@ -67,8 +65,8 @@ c=A_sparse\b_fylki;
 c=reshape(c,1,[]);
 c=c(1:(N+1)*(M+1));
 c=reshape(c,[N+1,M+1]);
-V=c'
+V=c';
 
-figure(figurecounter)
+figure(figurecounter);
 surf(X,Y,V, 'FaceAlpha',0.7)
 %contour(X,Y,V)
