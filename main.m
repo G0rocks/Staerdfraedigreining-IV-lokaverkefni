@@ -39,3 +39,8 @@ disp(HZ_lausn);
 % Seinni hluti - Varmajafnvaegi
 
 %varmajafnvaegi(1,1,1,0,0.25)
+
+psi1_handle = @(a,beta1,x) psi1(a,beta1,x)
+psi2_handle = @(a,beta2,x) psi2(a,beta2,x)
+
+varmajafnvaegi(1,1,1,0,0.25, psi1_handle,psi2_handle)
