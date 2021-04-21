@@ -7,25 +7,15 @@ L2 = 1;
 h = 1/4;
 p = 1;
 
-lambda = 1;
-h = 1/2;
-
-punktar = numera_punkta(0, 0, L1, L2, h);
-
-% Handles fyrir v og w föll
-v_handle = @v_HZ;
-w_handle = @w_HZ;
-
 % Nálga helmholtz fylki
-HZ = helmholtzeq(L1, L2, h, lambda, punktar);
-disp("HZ")
-disp(HZ)
+HZ = helmholtzeq(L1, L2, h, lambda);
+disp("HZ");
+disp(HZ);
 
 HZ_lausn = [1. 1. 1. 1. 1.; .75 .75 .75 .75 .75; .50 .50 .50 .50 .50; .25 .25 .25 .25 .25; 0. 0. 0. 0. 0.];
 
 disp("HZ_lausn:");
 disp(HZ_lausn);
-
 
 % lidur 3 - Prófa forrit á móti beinni lausn
 
@@ -38,4 +28,4 @@ disp(HZ_lausn);
 
 % Seinni hluti - Varmajafnvaegi
 
-%varmajafnvaegi(1,1,1,0,0.25)
+varmajafnvaegi(1,1,1,0,0.25)
