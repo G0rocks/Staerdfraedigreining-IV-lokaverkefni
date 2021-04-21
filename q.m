@@ -1,5 +1,5 @@
 % q fallið
 
 function q = q(lambda)
-    q = -lambda.*lambda;
+    q = -lambda*lambda;
 end % function
