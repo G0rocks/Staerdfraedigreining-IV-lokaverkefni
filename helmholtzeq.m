@@ -14,12 +14,12 @@ function HZ = helmholtzeq(L1, L2, h, lambda)
   %A_inv = inv(A);
   
   A_sparse = sparse(A);
-  C = A_sparse\(b')
+  C = A_sparse\(b');
   %C = b.*A_inv
   
   for j = 1:m   % Rows
     for i = 1:n % Columns
-      HZ(m-j+1,i) = C(numer_punkts(i,j,n))
+      HZ(m-j+1,i) = C(numer_punkts(i,j,n));
     end    % Column for loop
   end  % Row for loop
 end % Function
