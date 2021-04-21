@@ -1,3 +1,5 @@
+figurecounter=0
+
 % Fyrri hluti - Helmholtz
 % Er klárt
 
@@ -37,9 +39,26 @@ lambda = 10;
 
 
 
-
 % Seinni hluti - Varmajafnvaegi
+
+figurecounter=figurecounter+1;
+%prufukeyrsla
 psi1_handle = @(a,beta1,x) psi1(a,beta1,x);
 psi2_handle = @(a,beta2,x) psi2(a,beta2,x);
 
-varmajafnvaegi(1,1,1,0,0.25, psi1_handle,psi2_handle);
+varmajafnvaegi(1,1,1,0,0.25, psi1_handle,psi2_handle,figurecounter)
+
+
+figurecounter=figurecounter+1;
+%liður3
+psi1_handle = @(a,beta1,x) psi1(a,beta1,x);
+psi2_handle = @(a,beta2,x) psi2(a,beta2,x);
+
+varmajafnvaegi(2,1,1,2,0.02, psi1_handle,psi2_handle,figurecounter)
+
+figurecounter=figurecounter+1;
+%liður 4
+psi1_handle = @(a,beta1,x) psi1_okkar(a,beta1,x);
+psi2_handle = @(a,beta2,x) psi2_okkar(a,beta2,x);
+
+varmajafnvaegi(2,1,1,2,0.02, psi1_handle,psi2_handle,figurecounter)
