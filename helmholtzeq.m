@@ -13,7 +13,7 @@ function HZ = helmholtzeq(L1, L2, h, lambda, v, w, u0, u1)
   % Handles
   v_handle = @(x, u1,L1) v(x, u1,L1);
   w_handle = @(x, u0,L1) w(x, u0,L1);
-
+    
   [A,b] = generate_A_and_b(0, lambda, n, m, h, v_handle, w_handle, u0, u1, L1);
   %A_inv = inv(A);
   

@@ -28,6 +28,7 @@ disp('Ef þetta fylki er nógu nálægt því að vera núll fylkið er helmholt
 disp(HZ_lausn-HZ);
 
 % lidur 3 - Prófa forrit á móti beinni lausn
+disp('Fyrri hluti, liður 3');
 L1 = 1;
 L2 = 2;
 h = 1/20;
@@ -41,6 +42,15 @@ figure(figurecounter);
 surf(X,Y,u_fylki, 'FaceAlpha',0.7);
 title(strcat('Bein lausn, Lambda = ',num2str(lambda)));
 
+HZ = helmholtzeq(L1, L2, h, lambda, v_handle, w_handle, 0, 0);
+figurecounter = figurecounter+1;
+figure(figurecounter);
+surf(X,Y,u_fylki, 'FaceAlpha',0.7);
+title(strcat('Nálguð lausn, Lambda = ',num2str(lambda)));
+
+disp(strcat('Lambda = ', num2str(lambda),'Ef þetta fylki er nógu nálægt því að vera núll fylkið er helmholtz að virka'));
+disp(u_fylki-HZ);
+
 lambda = 10;
 u_fylki = u_HZ(X,Y, lambda, L1, L2);
 
@@ -48,6 +58,19 @@ figurecounter = figurecounter+1;
 figure(figurecounter);
 surf(X,Y,u_fylki, 'FaceAlpha',0.7);
 title(strcat('Bein lausn, Lambda = ',num2str(lambda)));
+
+HZ = helmholtzeq(L1, L2, h, lambda, v_handle, w_handle, 0, 0);
+figurecounter = figurecounter+1;
+figure(figurecounter);
+surf(X,Y,u_fylki, 'FaceAlpha',0.7);
+title(strcat('Nálguð lausn, Lambda = ',num2str(lambda)));
+
+disp(strcat('Lambda = ', num2str(lambda),'Ef þetta fylki er nógu nálægt því að vera núll fylkið er helmholtz að virka'));
+disp(u_fylki-HZ);
+
+disp('size á HZ fylki');
+disp(size(HZ));
+
 % Liður 4 - Teikna graf lausnar
 L1 = 1;
 L2 = 1;
