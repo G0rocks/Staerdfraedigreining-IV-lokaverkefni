@@ -106,7 +106,7 @@ psi2_handle = @(a,beta2,x) psi2(a,beta2,x);
 varmajafnvaegi(1,1,1,0,0.25, psi1_handle,psi2_handle,figurecounter)
 title('Prufukeyrsla');
 
-figurecounter=figurecounter+1;
+figurecounter=figurecounter+2;
 %liður3
 psi1_handle = @(a,beta1,x) psi1(a,beta1,x);
 psi2_handle = @(a,beta2,x) psi2(a,beta2,x);
@@ -114,7 +114,7 @@ psi2_handle = @(a,beta2,x) psi2(a,beta2,x);
 varmajafnvaegi(2,1,1,2,0.02, psi1_handle,psi2_handle,figurecounter)
 title('Liður 3');
 
-figurecounter=figurecounter+1;
+figurecounter=figurecounter+2;
 %liður 4
 psi1_handle = @(a,beta1,x) psi1_okkar(a,beta1,x);
 psi2_handle = @(a,beta2,x) psi2_okkar(a,beta2,x);

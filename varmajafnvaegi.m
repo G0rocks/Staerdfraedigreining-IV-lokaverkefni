@@ -69,4 +69,7 @@ V=c';
 
 figure(figurecounter);
 surf(X,Y,V)
-%contour(X,Y,V)
+figurecounter= figurecounter+1
+figure(figurecounter)
+contour(X,Y,V)
+return
