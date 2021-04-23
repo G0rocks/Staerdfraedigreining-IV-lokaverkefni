@@ -68,5 +68,8 @@ c=reshape(c,[N+1,M+1]);
 V=c';
 
 figure(figurecounter);
-surf(X,Y,V, 'FaceAlpha',0.7)
-%contour(X,Y,V)
+surf(X,Y,V)
+figurecounter= figurecounter+1
+figure(figurecounter)
+contour(X,Y,V)
+return
